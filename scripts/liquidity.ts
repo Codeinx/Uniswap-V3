@@ -25,7 +25,7 @@ async function main() {
     tickUpper: pool.tickCurrent + 60, 
   });
 
-  const nfPositionManager = new NonfungiblePositionManager({ provider: signer.provider, signer });
+  const nfPositionManager = new NonfungiblePositionManager(signer.provider, signer);
   await nfPositionManager.approve(USDC_ADDRESS, usdcAmount.raw);
   await nfPositionManager.approve(WETH_ADDRESS, wethAmount.raw);
 
